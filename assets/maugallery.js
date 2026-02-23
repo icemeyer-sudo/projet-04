@@ -150,7 +150,7 @@
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i ;
+          index = i - 1;
         }
       });
       next =
@@ -160,21 +160,22 @@
     },
     nextImage() {
       let activeImage = null;
-      $("img.gallery-item").each(function() {
-        if ($(this).attr("src") === $(".lightboxImage").attr("src")) {
-          activeImage = $(this);
+      $("img.gallery-item").each(function() { // parcours toutes les photos de la gallerie, même s'elle caché
+        if ($(this).attr("src") === $(".lightboxImage").attr("src")) { // si l'image acutelle du foreach = celle affichée dans la modale
+          activeImage = $(this); // alors la variable activeImage = image active dans la modale
         }
       });
-      let activeTag = $(".tags-bar span.active-tag").data("images-toggle");
+      let activeTag = $(".tags-bar span.active-tag").data("images-toggle"); // va récupérer la valeur du filtre
       let imagesCollection = [];
-      if (activeTag === "all") {
-        $(".item-column").each(function() {
-          if ($(this).children("img").length) {
-            imagesCollection.push($(this).children("img"));
+      if (activeTag === "all") { // si le filtre est sur tous
+        $(".item-column").each(function() { // parcours chaque div de la gallerie
+          
+          if ($(this).children("img").length) { 
+            imagesCollection.push($(this).children("img")); // ajoute chaque image à imagesCollection (tableau)
           }
         });
-      } else {
-        $(".item-column").each(function() {
+      } else { // si le filtre n'est pas sur tous
+        $(".item-column").each(function() { // fait la même chose que précedent mais seulement avec les images du filtres
           if (
             $(this)
               .children("img")
@@ -187,12 +188,13 @@
       let index = 0,
         next = null;
 
-      $(imagesCollection).each(function(i) {
-        if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i;
+      $(imagesCollection).each(function(i) { // pour chaque élément du tableau
+        if ($(activeImage).attr("src") === $(this).attr("src")) { // si l'image actuelle = l'image parcouru
+          index = i + 1; // index prend la valeur du numéro d'emplacement dans le tableau de l'élément c'est ici qu'il y a votre bug, il faut que index prenne la valeur de i + 1 pour passer à l'image suivante
         }
       });
       next = imagesCollection[index] || imagesCollection[0];
+      console.log(next);
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     createLightBox(gallery, lightboxId, navigation) {
@@ -241,6 +243,7 @@
       }
       $(".active-tag").removeClass("active active-tag");
       $(this).addClass("active-tag");
+      $(this).addClass("active");
 
       var tag = $(this).data("images-toggle");
 
