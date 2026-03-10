@@ -161,7 +161,7 @@
     nextImage() {
       let activeImage = null;
       $("img.gallery-item").each(function() { // parcours toutes les photos de la gallerie, même s'elle caché
-        if ($(this).attr("src") === $(".lightboxImage").attr("src")) { // si l'image acutelle du foreach = celle affichée dans la modale
+        if ($(this).attr("src") === $(".lightboxImage").attr("src")) { // si l'image actuelle du foreach = celle affichée dans la modale
           activeImage = $(this); // alors la variable activeImage = image active dans la modale
         }
       });
@@ -194,7 +194,6 @@
         }
       });
       next = imagesCollection[index] || imagesCollection[0];
-      console.log(next);
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     createLightBox(gallery, lightboxId, navigation) {
