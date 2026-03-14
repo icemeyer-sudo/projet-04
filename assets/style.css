@@ -18,6 +18,10 @@ body {
 	align-items: center;
 }
 
+.color-bk {
+    color: #000;
+}
+
 .top-header .name {
 	font-size: 26px;
 }
@@ -105,7 +109,7 @@ body {
 	justify-content: center;
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-	color: #fff;
+	color: #000;
 	background-color: #BEB45A;
 	border-radius:0 ;
 }
