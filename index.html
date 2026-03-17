@@ -60,7 +60,7 @@
 </head>
 <body>
 	<header class="top-header">
-		<h1 class="name">Nina Carducci - Photographe basé à Bordeaux</h1>
+		<h1 class="name">Nina Carducci</h1>
 		<nav class="nav">
 			<ul>
 				<li><a href="#about">À propos</a></li>
@@ -119,10 +119,11 @@
 		<section id="about">
 			<div class="picture left">
                 <picture>
-                        <source media="(max-width: 450px)" srcset="./assets/images/nina-450.webp">
-                        <source media="(min-width: 450px)" srcset="./assets/images/nina.webp">
-                        <img src="./assets/images/nina.webp" alt="Photo représentant la photographe du site" loading="lazy">
-                    </picture>
+                    <source media="(max-width: 300)" srcset="./assets/images/nina-300.webp">
+                    <source media="(max-width: 450px)" srcset="./assets/images/nina-450.webp">
+                    <source media="(min-width: 450px)" srcset="./assets/images/nina.webp">
+                    <img src="./assets/images/nina.webp" alt="Photo représentant la photographe du site" loading="lazy">
+                </picture>
 			</div>
 			<div id="about-me">
 				<h2 class="about-me__title">A propos de moi</h2>
@@ -215,7 +216,11 @@
                     </form>
                 </div>
                 <div class="picture right">
-                    <img src="./assets/images/camera.webp" alt="Photo d'un appareil photo">
+                    <picture>
+                        <source media="(max-width: 300px)" srcset="./assets/images/camera-300.webp">
+                        <source media="(min-width: 300px)" srcset="./assets/images/camera.webp">
+                        <img src="./assets/images/camera.webp" alt="Photo d'un appareil photo" loading="lazy">
+                    </picture>
                 </div>
             </div>
         </section>
