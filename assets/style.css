@@ -74,7 +74,12 @@ body {
 
 .picture img {
 	width: 100%;
-    height: auto;
+}
+
+.pictureimg {
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: block;
 }
 
 #about-me {
