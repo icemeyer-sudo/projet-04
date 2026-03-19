@@ -44,6 +44,7 @@ body {
 
 .social-link img {
 	width: 20px;
+    height: 20px;
 }
 
 #about {
@@ -73,8 +74,9 @@ body {
 
 .picture img {
 	width: 100%;
-
+    height: auto;
 }
+
 #about-me {
 	flex: 2
 }
@@ -108,7 +110,7 @@ body {
 .gallery .nav {
 	justify-content: center;
 }
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+.nav-pills .nav-link.active-tag, .nav-pills .show > .nav-link {
 	color: #000;
 	background-color: #BEB45A;
 	border-radius:0 ;

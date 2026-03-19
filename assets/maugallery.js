@@ -169,8 +169,8 @@
       let imagesCollection = [];
       if (activeTag === "all") { // si le filtre est sur tous
         $(".item-column").each(function() { // parcours chaque div de la gallerie
-          
-          if ($(this).children("img").length) { 
+
+          if ($(this).children("img").length) {
             imagesCollection.push($(this).children("img")); // ajoute chaque image à imagesCollection (tableau)
           }
         });
@@ -190,7 +190,8 @@
 
       $(imagesCollection).each(function(i) { // pour chaque élément du tableau
         if ($(activeImage).attr("src") === $(this).attr("src")) { // si l'image actuelle = l'image parcouru
-          index = i + 1; // index prend la valeur du numéro d'emplacement dans le tableau de l'élément c'est ici qu'il y a votre bug, il faut que index prenne la valeur de i + 1 pour passer à l'image suivante
+          index = i + 1; // index prend la valeur du numéro d'emplacement dans le tableau de l'élément c'est ici qu'il y a votre bug,
+          // il faut que index prenne la valeur de i + 1 pour passer à l'image suivante
         }
       });
       next = imagesCollection[index] || imagesCollection[0];
@@ -242,7 +243,7 @@
       }
       $(".active-tag").removeClass("active active-tag");
       $(this).addClass("active-tag");
-      $(this).addClass("active");
+
 
       var tag = $(this).data("images-toggle");
 
